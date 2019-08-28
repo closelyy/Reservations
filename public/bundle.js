@@ -86,6 +86,54 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/Calendar.jsx":
+/*!*****************************!*\
+  !*** ./client/Calendar.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Calendar = function Calendar() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"calendar\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"month-indicator\"\n  }, \"Month\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"day-of-week\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Su\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Mo\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Tu\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"We\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Th\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Fr\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Sa\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"date-grid\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    type: \"button\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"time\", {\n    dateTime: \"2019-09-01\"\n  }, \"1\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    type: \"button\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"time\", {\n    dateTime: \"2019-09-02\"\n  }, \"2\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    type: \"button\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"time\", {\n    dateTime: \"2019-09-03\"\n  }, \"3\"))));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Calendar);\n\n//# sourceURL=webpack:///./client/Calendar.jsx?");
+
+/***/ }),
+
+/***/ "./client/GroupSizeSelector.jsx":
+/*!**************************************!*\
+  !*** ./client/GroupSizeSelector.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar GroupSizeSelector = function GroupSizeSelector() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Group Size Selector\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GroupSizeSelector);\n\n//# sourceURL=webpack:///./client/GroupSizeSelector.jsx?");
+
+/***/ }),
+
+/***/ "./client/Reservation.jsx":
+/*!********************************!*\
+  !*** ./client/Reservation.jsx ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Calendar */ \"./client/Calendar.jsx\");\n/* harmony import */ var _TimeSelector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TimeSelector */ \"./client/TimeSelector.jsx\");\n/* harmony import */ var _GroupSizeSelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GroupSizeSelector */ \"./client/GroupSizeSelector.jsx\");\n\n\n\n\n\nvar Reservation = function Reservation() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"reservation-container\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h2\", null, \"Make a Reservation\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Calendar__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TimeSelector__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GroupSizeSelector__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Reservation);\n\n//# sourceURL=webpack:///./client/Reservation.jsx?");
+
+/***/ }),
+
+/***/ "./client/TimeSelector.jsx":
+/*!*********************************!*\
+  !*** ./client/TimeSelector.jsx ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar TimeSelector = function TimeSelector() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Time Selector\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TimeSelector);\n\n//# sourceURL=webpack:///./client/TimeSelector.jsx?");
+
+/***/ }),
+
 /***/ "./client/index.jsx":
 /*!**************************!*\
   !*** ./client/index.jsx ***!
@@ -94,7 +142,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"Hello World\"), document.getElementById('app'));\n\n//# sourceURL=webpack:///./client/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Reservation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Reservation */ \"./client/Reservation.jsx\");\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reservation__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./client/index.jsx?");
 
 /***/ }),
 
