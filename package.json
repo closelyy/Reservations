@@ -10,7 +10,7 @@
   "scripts": {
     "start": "nodemon ./server/server.js",
     "build": "npx webpack --watch",
-    "seed-db": "node database/data.js",
+    "seed-db": "node database/seed.js",
     "test": "jest --coverage"
   },
   "dependencies": {
