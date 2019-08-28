@@ -55,8 +55,11 @@ const data = new db.Reservation({
 });
 data.save(((err) => {
   if (err) {
-    console.error(err);
+    throw err;
+    // console.error(err);
   } else {
-    console.log('Document successfully saved!');
+    // console.log('Document successfully saved!');
   }
 }));
+
+module.exports = reservations;
