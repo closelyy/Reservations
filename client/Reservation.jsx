@@ -15,6 +15,8 @@ class Reservation extends React.Component {
     return (
       <Wrapper>
         <Title>Make a Reservation</Title>
+        <DropDown calendar />
+        <br />
         <DropDown time>
           <DropDownEntry>5:00 PM</DropDownEntry>
           <DropDownEntry>5:30 PM</DropDownEntry>
@@ -26,12 +28,15 @@ class Reservation extends React.Component {
           <DropDownEntry>8:30 PM</DropDownEntry>
           <DropDownEntry>9:00 PM</DropDownEntry>
         </DropDown>
+        &nbsp;
         <DropDown partySize>
           <DropDownEntry>2 people</DropDownEntry>
           <DropDownEntry>3 people</DropDownEntry>
           <DropDownEntry>4 people</DropDownEntry>
           <DropDownEntry>5 people</DropDownEntry>
           <DropDownEntry>6 people</DropDownEntry>
+          <DropDownEntry>7 people</DropDownEntry>
+          <DropDownEntry>8 people</DropDownEntry>
         </DropDown>
       </Wrapper>
     );
