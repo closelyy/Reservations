@@ -4,6 +4,7 @@ import Wrapper from './styled-components/Wrapper';
 import Title from './styled-components/Title';
 import DropDown from './styled-components/DropDown';
 import DropDownEntry from './styled-components/DropDownEntry';
+import Button from './styled-components/Button';
 
 class Reservation extends React.Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class Reservation extends React.Component {
           <DropDownEntry>7 people</DropDownEntry>
           <DropDownEntry>8 people</DropDownEntry>
         </DropDown>
+        <Button>Find a Table</Button>
       </Wrapper>
     );
   }
