@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
+`;
+
+const FindButton = styled(Button)`
   background-color: #d32323;
   border: 1px solid #d32323;
   width: 96%;
@@ -9,4 +12,14 @@ const Button = styled.button`
   border-radius: 2px;
 `;
 
-export default Button;
+const DayButton = styled(Button)`
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+`;
+
+export {
+  FindButton,
+  DayButton,
+};

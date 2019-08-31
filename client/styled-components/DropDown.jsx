@@ -7,4 +7,10 @@ const DropDown = styled.select`
   width: ${(props) => (props.calendar ? '95%' : '47%')};
 `;
 
-export default DropDown;
+const DropDownEntry = styled.option`
+`;
+
+export {
+  DropDown,
+  DropDownEntry,
+};
