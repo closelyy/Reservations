@@ -19,6 +19,9 @@ const OctoberMonthValue = '2019-10';
 for (let i = 1; i <= 31; i += 1) {
   const OctoberObj = {};
   let OctoberDateTimeDayValue = '2019-10-';
+  if (i === 1) {
+    OctoberObj.firstDay = '01';
+  }
   if (i < 10) {
     OctoberDateTimeDayValue += `0${i}`;
   } else {

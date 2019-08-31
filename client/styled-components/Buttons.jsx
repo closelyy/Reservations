@@ -13,9 +13,10 @@ const FindButton = styled(Button)`
 `;
 
 const DayButton = styled(Button)`
+  grid-column: ${(props) => (props.firstChild ? 3 : 'auto')};
   border: 0;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: ${(props) => (props.firstChild ? 'red' : 'green')};;
   position: relative;
 `;
 

@@ -25,7 +25,7 @@ const Month = styled(Div)`
 `;
 
 const GridContainer = styled(Div)`
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(7, 1fr);
   z-index: 10;
   text-align: center;

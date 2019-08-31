@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { FindButton, DayButton } from './Button';
+import { FindButton, DayButton } from './Buttons';
 import Title from './Title';
-import { DropDown, DropDownEntry } from './DropDown';
+import { DropDown, DropDownEntry } from './DropDowns';
 import CalendarInput from './CalendarInput';
 import {
   ComponentContainer, CalendarContainer, Days, Month, GridContainer,
@@ -49,7 +49,7 @@ class Reservation extends React.Component {
                 {cd.dayAbbreviations.map((day) => <Days key={day}>{day}</Days>)}
               </GridContainer>
               <GridContainer>
-                {cd.October.map((day) => <DayButton key={day.dateTimeDay}><time dateTime={day.dateTimeDay}>{day.day}</time></DayButton>)}
+                {cd.October.map((day) => (day.firstDay === '01' ? <DayButton firstChild key={day.dateTimeDay}><time dateTime={day.day}>{day.day}</time></DayButton> : <DayButton key={day.dateTimeDay}><time dateTime={day.dateTimeDay}>{day.day}</time></DayButton>))}
               </GridContainer>
             </CalendarContainer>
           )}
