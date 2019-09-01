@@ -10,7 +10,7 @@ db.once('open', () => {
   console.log('Connection established!');
 });
 
-const reservationSchema = mongoose.Schema({
+const restaurantSchema = mongoose.Schema({
   restaurantId: { type: Number },
   currentDate: { type: Date, default: Date.now },
   maxPartySize: { type: Number },
@@ -35,6 +35,6 @@ const reservationSchema = mongoose.Schema({
   ],
 });
 
-const Reservation = mongoose.model('Reservation', reservationSchema);
+const Reservation = mongoose.model('Reservation', restaurantSchema);
 
 module.exports.Reservation = Reservation;
