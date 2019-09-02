@@ -14,6 +14,18 @@ for (let i = 1; i <= 30; i += 1) {
   SeptemberDays.push(i);
 }
 
+// Helper Functions to translate Date
+const getMonth = (inputDate) => {
+  if (inputDate === '8') {
+    return 'September';
+  } if (inputDate === '9') {
+    return 'October';
+  } if (inputDate === '10') {
+    return 'November';
+  }
+  return inputDate;
+};
+
 const October = [];
 const OctoberMonthValue = '2019-10';
 for (let i = 1; i <= 31; i += 1) {
@@ -38,6 +50,8 @@ for (let i = 1; i <= 30; i += 1) {
 }
 
 export default {
+  getMonth,
+  newDate,
   currentDay,
   OctoberMonthValue,
   dayAbbreviations,

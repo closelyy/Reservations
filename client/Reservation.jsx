@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-/* eslint-disable react/no-unused-state */
 import React from 'react';
 import Axios from 'axios';
-import Modal from './Modal';
+import Modal from './styled-components/Modal';
 import { FindButton, DayButton } from './styled-components/Buttons';
 import Title from './styled-components/Title';
 import { DropDown, DropDownEntry } from './styled-components/DropDowns';
@@ -19,12 +18,13 @@ class Reservation extends React.Component {
     super(props);
     this.state = {
       calendarHidden: true,
-      calendarDay: null,
-      selectedDate: null,
-      selectedTime: null,
-      selectedPartySize: null,
-      openTimes: [],
       showModal: false,
+      selectedTime: cd.availableTimes[0],
+      selectedPartySize: cd.partySize[0],
+      selectedDay: cd.newDate.getDay().toString(),
+      selectedDate: null,
+      selectedMonth: cd.getMonth(cd.newDate.getMonth().toString()),
+      openTimes: [],
     };
 
     this.hideModal = this.hideModal.bind(this);
@@ -43,24 +43,23 @@ class Reservation extends React.Component {
 
   findTable() {
     const openTimes = [];
-    const { selectedTime, selectedPartySize } = this.state;
-    if (selectedTime && selectedPartySize) {
-      Axios.get('/api/reservations/')
-        .then((response) => {
-          response.data.forEach((dataPoint) => {
-            if (dataPoint.month === 'October' && dataPoint.day === 1) {
-              openTimes.push(dataPoint.hour);
-            }
-          });
-        })
-        .then(() => {
-          this.setState({
-            openTimes,
-            showModal: true,
-          });
-        })
-        .catch(console.log);
-    }
+    const { selectedDay, selectedMonth } = this.state;
+    Axios.get('/api/reservations/')
+      .then((response) => {
+        console.log(response);
+        response.data.forEach((dataPoint) => {
+          if (dataPoint.month === selectedMonth && dataPoint.day === selectedDay) {
+            openTimes.push(dataPoint.hour);
+          }
+        });
+      })
+      .then(() => {
+        this.setState({
+          openTimes,
+          showModal: true,
+        });
+      })
+      .catch(console.log);
   }
 
   changeParty(e) {
@@ -78,7 +77,7 @@ class Reservation extends React.Component {
   handleCalendarButtonClick(e) {
     const { calendarHidden } = this.state;
     this.setState({
-      calendarDay: e.target.innerText,
+      selectedDay: e.target.innerText,
       calendarHidden: !calendarHidden,
       selectedDate: e.target.title,
     });
@@ -114,7 +113,7 @@ class Reservation extends React.Component {
                 {cd.dayAbbreviations.map((day) => <Days key={day}>{day}</Days>)}
               </GridContainer>
               <GridContainer>
-                {cd.October.map((day, index) => (<DayButton index={index} firstChild title={day.dateTimeDay} onClick={this.handleCalendarButtonClick} key={day.dateTimeDay}><time title={day.dateTimeDay} dateTime={day.day}>{day.day}</time></DayButton>))}
+                {cd.October.map((day, index) => (<DayButton index={index} title={day.dateTimeDay} onClick={this.handleCalendarButtonClick} key={day.dateTimeDay}><time title={day.dateTimeDay} dateTime={day.day}>{day.day}</time></DayButton>))}
               </GridContainer>
             </CalendarContainer>
           )}

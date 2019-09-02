@@ -18,8 +18,8 @@ const createData = () => {
     reservations.push(months[i]);
   }
 
-  // Restaurant hours set as 10am to 10pm
-  const restaurantHours = ['10', '10:30', '11', '11:30', '12', '12:30', '13', '13:30', '14', '14:30', '15', '15:30', '16', '16:30', '17', '17:30', '18', '18:30', '19', '19:30', '20', '20:30', '21', '21:30', '22', '22:30'];
+  // Open Reservation Hours For All Businesses
+  const restaurantHours = ['5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM', '9:00 PM'];
 
   // Creating dates and hours properties to add to each month object
   for (let i = 0; i < months.length; i += 1) {
@@ -40,7 +40,7 @@ const createData = () => {
   }
 
   // Randomize available times that can be reserved
-  for (let i = 0; i < 2000; i += 1) {
+  for (let i = 0; i < 400; i += 1) {
     const randomMonth = Math.floor(Math.random() * reservations.length);
     const randomDate = Math.floor(Math.random() * reservations[randomMonth].dates.length);
     const randomHour = Math.floor(Math.random() * reservations[randomMonth].dates[randomDate].hours.length);
@@ -49,8 +49,4 @@ const createData = () => {
   return reservations;
 };
 
-// Create new instance of collection and save to db
-
-module.exports = {
-  createData,
-};
+module.exports.createData = createData;
