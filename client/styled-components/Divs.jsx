@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-const Div = styled.div`
-`;
-
-const ComponentContainer = styled(Div)`
+const ComponentContainer = styled.div`
   border-radius: 2%;
   border: 2px solid #e6e6e6;
   width: 25%;
@@ -11,20 +8,21 @@ const ComponentContainer = styled(Div)`
   text-align: center;
 `;
 
-const CalendarContainer = styled(Div)`
-  position: absolute;
+const CalendarContainer = styled.div`
+  position: fixed;
+  min-width: 25%;
 `;
 
-const Days = styled(Div)`
+const Days = styled.div`
   color: black;
 `;
 
-const Month = styled(Div)`
+const Month = styled.div`
   background: cornsilk;
   text-align: center;
 `;
 
-const GridContainer = styled(Div)`
+const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   z-index: 10;
