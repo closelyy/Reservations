@@ -69,7 +69,6 @@ class Reservation extends React.Component {
   }
 
   findTable() {
-    console.log('hi');
     const openTimes = [];
     const { selectedDay, selectedMonth } = this.state;
     Axios.get('/api/reservations/')
@@ -135,11 +134,11 @@ class Reservation extends React.Component {
               changeMonthBackward={this.changeMonthBackward}
             />
           )}
-        <DropDown className="dropDown" onChange={this.changeTime}>
+        <DropDown className="dropDown">
           {cd.availableTimes.map((time) => <DropDownEntry className="dropDown-entry" key={time}>{time}</DropDownEntry>)}
         </DropDown>
         &nbsp;
-        <DropDown className="dropDown" onChange={this.changeParty}>
+        <DropDown className="dropDown">
           {cd.partySize.map((size) => <DropDownEntry key={size}>{size}</DropDownEntry>)}
         </DropDown>
         <FindTableButton onClick={this.findTable}>Find a Table</FindTableButton>
