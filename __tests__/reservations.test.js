@@ -49,7 +49,7 @@ describe('<Reservation />', () => {
     });
   });
 
-  describe('Functions', () => {
+  xdescribe('Functions', () => {
     const func = jest.fn();
     const wrapper = mount(<FindButton onClick={func} />);
     test('Find table button should be clickable', async () => {
