@@ -9,15 +9,4 @@ const FindButton = styled.button`
   border-radius: 2px;
 `;
 
-const DayButton = styled.button`
-  grid-column: ${(props) => (props.index === 0 ? 3 : 'auto')};
-  border: 0;
-  border-radius: 50%;
-  background-color: transparent;
-  position: relative;
-`;
-
-export {
-  FindButton,
-  DayButton,
-};
+export default FindButton;

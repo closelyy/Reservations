@@ -2,14 +2,15 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Axios from 'axios';
+
 import Modal from './styled-components/Modal';
-import { FindButton, DayButton } from './styled-components/Buttons';
+import FindButton from './styled-components/Buttons';
 import Title from './styled-components/Title';
 import { DropDown, DropDownEntry } from './styled-components/DropDowns';
-import CalendarInput from './styled-components/CalendarInput';
 import {
-  ComponentContainer, CalendarContainer, Days, Month, GridContainer,
-} from './styled-components/Divs';
+  CalendarInput, Calendar,
+} from './styled-components/Calendar';
+import ComponentContainer from './styled-components/Divs';
 
 const cd = require('./CalendarData/CalendarData').default;
 
@@ -19,20 +20,46 @@ class Reservation extends React.Component {
     this.state = {
       calendarHidden: true,
       showModal: false,
-      selectedTime: cd.availableTimes[0],
-      selectedPartySize: cd.partySize[0],
-      selectedDay: cd.newDate.getDay().toString(),
+      selectedDay: cd.newDate.getDate().toString(),
       selectedDate: null,
       selectedMonth: cd.getMonth(cd.newDate.getMonth().toString()),
       openTimes: [],
     };
 
+    this.changeMonthBackward = this.changeMonthBackward.bind(this);
+    this.changeMonthForward = this.changeMonthForward.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.findTable = this.findTable.bind(this);
-    this.changeParty = this.changeParty.bind(this);
-    this.changeTime = this.changeTime.bind(this);
     this.handleCalendarButtonClick = this.handleCalendarButtonClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  changeMonthForward() {
+    const { selectedMonth } = this.state;
+    if (selectedMonth === 'September') {
+      this.setState({
+        selectedMonth: 'October',
+      });
+    }
+    if (selectedMonth === 'October') {
+      this.setState({
+        selectedMonth: 'November',
+      });
+    }
+  }
+
+  changeMonthBackward() {
+    const { selectedMonth } = this.state;
+    if (selectedMonth === 'November') {
+      this.setState({
+        selectedMonth: 'October',
+      });
+    }
+    if (selectedMonth === 'October') {
+      this.setState({
+        selectedMonth: 'September',
+      });
+    }
   }
 
   hideModal() {
@@ -46,9 +73,8 @@ class Reservation extends React.Component {
     const { selectedDay, selectedMonth } = this.state;
     Axios.get('/api/reservations/')
       .then((response) => {
-        console.log(response);
         response.data.forEach((dataPoint) => {
-          if (dataPoint.month === selectedMonth && dataPoint.day === selectedDay) {
+          if (dataPoint.month === selectedMonth && dataPoint.day === +selectedDay) {
             openTimes.push(dataPoint.hour);
           }
         });
@@ -62,24 +88,14 @@ class Reservation extends React.Component {
       .catch(console.log);
   }
 
-  changeParty(e) {
-    this.setState({
-      selectedPartySize: e.target.value,
-    });
-  }
-
-  changeTime(e) {
-    this.setState({
-      selectedTime: e.target.value,
-    });
-  }
-
   handleCalendarButtonClick(e) {
+    console.log(e.target.title);
     const { calendarHidden } = this.state;
     this.setState({
       selectedDay: e.target.innerText,
       calendarHidden: !calendarHidden,
-      selectedDate: e.target.title,
+      selectedDate: cd.getString(e.target.title),
+      selectedMonth: cd.translateMonth(e.target.title),
     });
   }
 
@@ -91,11 +107,18 @@ class Reservation extends React.Component {
   }
 
   render() {
-    const { calendarHidden, selectedDate, showModal } = this.state;
     console.log(this.state);
+    const {
+      calendarHidden, selectedDate, showModal, openTimes, selectedMonth,
+    } = this.state;
     return (
       <ComponentContainer>
-        <Modal showModal={showModal} hideModal={this.hideModal} />
+        <Modal
+          openTimes={openTimes}
+          showModal={showModal}
+          hideModal={this.hideModal}
+          selectedDate={selectedDate}
+        />
         <Title>Make a Reservation</Title>
         <CalendarInput
           type="text"
@@ -105,17 +128,12 @@ class Reservation extends React.Component {
         />
         {calendarHidden ? <br />
           : (
-            <CalendarContainer>
-              <Month>
-                <time dateTime={cd.OctoberMonthValue}>October 2019</time>
-              </Month>
-              <GridContainer>
-                {cd.dayAbbreviations.map((day) => <Days key={day}>{day}</Days>)}
-              </GridContainer>
-              <GridContainer>
-                {cd.October.map((day, index) => (<DayButton index={index} title={day.dateTimeDay} onClick={this.handleCalendarButtonClick} key={day.dateTimeDay}><time title={day.dateTimeDay} dateTime={day.day}>{day.day}</time></DayButton>))}
-              </GridContainer>
-            </CalendarContainer>
+            <Calendar
+              selectedMonth={selectedMonth}
+              handleCalendarButtonClick={this.handleCalendarButtonClick}
+              changeMonthForward={this.changeMonthForward}
+              changeMonthBackward={this.changeMonthBackward}
+            />
           )}
         <DropDown onChange={this.changeTime}>
           {cd.availableTimes.map((time) => <DropDownEntry key={time}>{time}</DropDownEntry>)}

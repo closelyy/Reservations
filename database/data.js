@@ -40,7 +40,7 @@ const createData = () => {
   }
 
   // Randomize available times that can be reserved
-  for (let i = 0; i < 400; i += 1) {
+  for (let i = 0; i < 600; i += 1) {
     const randomMonth = Math.floor(Math.random() * reservations.length);
     const randomDate = Math.floor(Math.random() * reservations[randomMonth].dates.length);
     const randomHour = Math.floor(Math.random() * reservations[randomMonth].dates[randomDate].hours.length);

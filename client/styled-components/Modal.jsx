@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const cd = require('../CalendarData/CalendarData').default;
+
 const ModalContainer = styled.div`
   position: fixed;
   left: 0;
@@ -21,9 +23,10 @@ const ModalContent = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 1rem 1.5rem;
-  width: 24rem;
-  border-radius: 0.5rem;
+  padding: 3%;
+  width: 60%;
+  text-align: center;
+  border-radius: 2px;
 `;
 
 const CloseButton = styled.span`
@@ -33,24 +36,50 @@ const CloseButton = styled.span`
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray;
 `;
 
-const ModalText = styled.h1`
+const OpenTimes = styled.div`
+  background-color: #0097ec;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  padding: 1%;
+  margin: 1%;
+  font-family: Arial;
 `;
 
-const Modal = ({ showModal, hideModal }) => (
+const Date = styled.div`
+  display: inline-flex;
+  font-family: Arial;
+  justify-content: left;
+`;
+
+const Modal = ({
+  showModal, hideModal, openTimes, selectedDate,
+}) => (
   <ModalContainer showModal={showModal}>
     <ModalContent>
       <CloseButton onClick={hideModal}>&times;</CloseButton>
-      <ModalText>Hello World!</ModalText>
+      <Date>
+        {selectedDate || cd.currentDay}
+      </Date>
+      &nbsp;
+      &nbsp;
+      {openTimes.map((time) => <OpenTimes key={time}>{time}</OpenTimes>)}
     </ModalContent>
   </ModalContainer>
 );
 
 Modal.propTypes = {
+  openTimes: PropTypes.arrayOf(PropTypes.string).isRequired,
   showModal: PropTypes.bool.isRequired,
   hideModal: PropTypes.func.isRequired,
+  selectedDate: PropTypes.string,
+};
+
+Modal.defaultProps = {
+  selectedDate: cd.currentDay,
 };
 
 export default Modal;
