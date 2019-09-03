@@ -89,7 +89,6 @@ class Reservation extends React.Component {
   }
 
   handleCalendarButtonClick(e) {
-    console.log(e.target.title);
     const { calendarHidden } = this.state;
     this.setState({
       selectedDay: e.target.innerText,
@@ -107,7 +106,6 @@ class Reservation extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const {
       calendarHidden, selectedDate, showModal, openTimes, selectedMonth,
     } = this.state;
@@ -121,6 +119,7 @@ class Reservation extends React.Component {
         />
         <Title>Make a Reservation</Title>
         <CalendarInput
+          className="calendar-input"
           type="text"
           onClick={this.handleClick}
           value={selectedDate || cd.currentDay}
@@ -135,14 +134,14 @@ class Reservation extends React.Component {
               changeMonthBackward={this.changeMonthBackward}
             />
           )}
-        <DropDown onChange={this.changeTime}>
-          {cd.availableTimes.map((time) => <DropDownEntry key={time}>{time}</DropDownEntry>)}
+        <DropDown className="dropDown" onChange={this.changeTime}>
+          {cd.availableTimes.map((time) => <DropDownEntry className="dropDown-entry" key={time}>{time}</DropDownEntry>)}
         </DropDown>
         &nbsp;
-        <DropDown onChange={this.changeParty}>
+        <DropDown className="dropDown" onChange={this.changeParty}>
           {cd.partySize.map((size) => <DropDownEntry key={size}>{size}</DropDownEntry>)}
         </DropDown>
-        <FindButton onClick={this.findTable}>Find a Table</FindButton>
+        <FindButton onClick={this.findTable} />
       </ComponentContainer>
     );
   }

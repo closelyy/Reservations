@@ -55,11 +55,17 @@ const Date = styled.div`
   justify-content: left;
 `;
 
+const Header = styled.h3`
+  font-family: Arial;
+  padding: 0;
+`;
+
 const Modal = ({
   showModal, hideModal, openTimes, selectedDate,
 }) => (
   <ModalContainer showModal={showModal}>
     <ModalContent>
+      <Header>Available Times</Header>
       <CloseButton onClick={hideModal}>&times;</CloseButton>
       <Date>
         {selectedDate || cd.currentDay}

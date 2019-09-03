@@ -166,4 +166,6 @@ Calendar.propTypes = {
 export {
   CalendarInput,
   Calendar,
+  Month,
+  GridContainer,
 };
