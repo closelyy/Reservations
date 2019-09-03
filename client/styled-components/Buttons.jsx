@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import React from 'react';
 
 const FindTableButton = styled.button`
   background-color: #d32323;
@@ -10,8 +9,4 @@ const FindTableButton = styled.button`
   border-radius: 2px;
 `;
 
-const FindButton = () => (
-  <FindTableButton>Find a Table</FindTableButton>
-);
-
-export default FindButton;
+export default FindTableButton;

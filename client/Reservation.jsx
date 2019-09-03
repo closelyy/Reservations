@@ -4,7 +4,7 @@ import React from 'react';
 import Axios from 'axios';
 
 import Modal from './styled-components/Modal';
-import FindButton from './styled-components/Buttons';
+import FindTableButton from './styled-components/Buttons';
 import Title from './styled-components/Title';
 import { DropDown, DropDownEntry } from './styled-components/DropDowns';
 import {
@@ -69,6 +69,7 @@ class Reservation extends React.Component {
   }
 
   findTable() {
+    console.log('hi');
     const openTimes = [];
     const { selectedDay, selectedMonth } = this.state;
     Axios.get('/api/reservations/')
@@ -141,7 +142,7 @@ class Reservation extends React.Component {
         <DropDown className="dropDown" onChange={this.changeParty}>
           {cd.partySize.map((size) => <DropDownEntry key={size}>{size}</DropDownEntry>)}
         </DropDown>
-        <FindButton onClick={this.findTable} />
+        <FindTableButton onClick={this.findTable}>Find a Table</FindTableButton>
       </ComponentContainer>
     );
   }
