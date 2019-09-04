@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 
-const FindTableButton = styled.button`
+const FindTableButton = window.styled.button`
   background-color: #d32323;
   border: 1px solid #d32323;
   width: 96%;

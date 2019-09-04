@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const cd = require('../CalendarData/CalendarData').default;
 
-const ModalContainer = styled.div`
+const ModalContainer = window.styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -14,10 +13,11 @@ const ModalContainer = styled.div`
   opacity: ${(props) => (props.showModal ? 1 : 0)};
   visibility: ${(props) => (props.showModal ? 'visible' : 'hidden')};
   transform: scale(1.0);
+  z-index: 9999;
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 `;
 
-const ModalContent = styled.div`
+const ModalContent = window.styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,7 +29,7 @@ const ModalContent = styled.div`
   border-radius: 2px;
 `;
 
-const CloseButton = styled.span`
+const CloseButton = window.styled.span`
   float: right;
   width: 1.5rem;
   line-height: 1.5rem;
@@ -38,7 +38,7 @@ const CloseButton = styled.span`
   border-radius: 0.25rem;
 `;
 
-const OpenTimes = styled.div`
+const OpenTimes = window.styled.div`
   background-color: #0097ec;
   color: #fff;
   display: inline-block;
@@ -49,13 +49,13 @@ const OpenTimes = styled.div`
   font-family: Arial;
 `;
 
-const Date = styled.div`
+const Date = window.styled.div`
   display: inline-flex;
   font-family: Arial;
   justify-content: left;
 `;
 
-const Header = styled.h3`
+const Header = window.styled.h3`
   font-family: Arial;
   padding: 0;
 `;

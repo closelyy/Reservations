@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 
-const ComponentContainer = styled.div`
+const ComponentContainer = window.styled.div`
   border-radius: 2%;
   border: 2px solid #e6e6e6;
   width: 25%;

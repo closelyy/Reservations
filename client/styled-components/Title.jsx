@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 
-const Title = styled.h3`
+const Title = window.styled.h3`
   float: left;
   padding-left: 3%;
   margin-top: 1%;
