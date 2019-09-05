@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
 const cd = require('../CalendarData/CalendarData').default;
 
-const ModalContainer = window.styled.div`
+const ModalContainer = styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -17,7 +18,7 @@ const ModalContainer = window.styled.div`
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 `;
 
-const ModalContent = window.styled.div`
+const ModalContent = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,7 +30,7 @@ const ModalContent = window.styled.div`
   border-radius: 2px;
 `;
 
-const CloseButton = window.styled.span`
+const CloseButton = styled.span`
   float: right;
   width: 1.5rem;
   line-height: 1.5rem;
@@ -38,7 +39,7 @@ const CloseButton = window.styled.span`
   border-radius: 0.25rem;
 `;
 
-const OpenTimes = window.styled.div`
+const OpenTimes = styled.div`
   background-color: #0097ec;
   color: #fff;
   display: inline-block;
@@ -49,13 +50,13 @@ const OpenTimes = window.styled.div`
   font-family: Arial;
 `;
 
-const Date = window.styled.div`
+const Date = styled.div`
   display: inline-flex;
   font-family: Arial;
   justify-content: left;
 `;
 
-const Header = window.styled.h3`
+const Header = styled.h3`
   font-family: Arial;
   padding: 0;
 `;

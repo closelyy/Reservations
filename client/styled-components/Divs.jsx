@@ -1,5 +1,6 @@
+import styled from '@emotion/styled';
 
-const ComponentContainer = window.styled.div`
+const ComponentContainer = styled.div`
   border-radius: 2%;
   border: 2px solid #e6e6e6;
   width: 25%;

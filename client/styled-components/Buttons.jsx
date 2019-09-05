@@ -1,5 +1,6 @@
+import styled from '@emotion/styled';
 
-const FindTableButton = window.styled.button`
+const FindTableButton = styled.button`
   background-color: #d32323;
   border: 1px solid #d32323;
   width: 96%;

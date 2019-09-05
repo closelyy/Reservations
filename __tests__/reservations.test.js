@@ -13,7 +13,7 @@ import DropDown from '../client/styled-components/DropDowns';
 
 const cd = require('../client/CalendarData/CalendarData');
 
-xdescribe('<Reservation />', () => {
+describe('<Reservation />', () => {
   describe('Structure/Appearance', () => {
     const wrapper = shallow(<Reservation />);
     test('it should contain a Modal', () => {
@@ -39,8 +39,8 @@ xdescribe('<Reservation />', () => {
     test('it should show calendar on click', () => {
       const input = wrapper.find('.calendar-input');
       input.simulate('click');
-      const test = wrapper.find(Calendar);
-      expect(test).toHaveLength(1);
+      const xtest = wrapper.find(Calendar);
+      expect(xtest).toHaveLength(1);
     });
 
     xtest('it should open a calendar upon click', () => {
@@ -59,7 +59,7 @@ xdescribe('<Reservation />', () => {
   });
 });
 
-xdescribe('<Calendar />', () => {
+describe('<Calendar />', () => {
   const props = {
     handleCalendarButtonClick: jest.fn(),
     selectedMonth: '',
@@ -80,16 +80,16 @@ xdescribe('<Calendar />', () => {
   });
 });
 
-xdescribe('Calendar Data Functions', () => {
-  describe('translateMonth', () => {
-    test('it should return a string', () => {
+describe('Calendar Data Functions', () => {
+  xdescribe('translateMonth', () => {
+    xest('it should return a string', () => {
       const input = '2019-10-01';
       const translate = cd.default.translateMonth;
       expect(translate(input)).toBe('October');
     });
   });
 
-  xdescribe('getString', () => {
+  describe('getString', () => {
     test('it should return a string', () => {
       const input = '2019-9-2';
       const func = cd.default.getString;

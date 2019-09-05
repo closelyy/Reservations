@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
 const cd = require('../CalendarData/CalendarData');
 
-const CalendarContainer = window.styled.div`
+const CalendarContainer = styled.div`
   position: fixed;
   min-width: 25%;
   min-height: 20%;
@@ -12,52 +13,52 @@ const CalendarContainer = window.styled.div`
   border-radius: 2%;
 `;
 
-const Days = window.styled.div`
+const Days = styled.div`
   font-family: Arial;
   color: #d32323;
   font-size: 70%;
 `;
 
-const SeptemberDayButton = window.styled.button`
+const SeptemberDayButton = styled.button`
   grid-column: 0;
   border: 0.5px solid #e6e6e6;
   background-color: transparent;
   position: relative;
 `;
 
-const OctoberDayButton = window.styled.button`
+const OctoberDayButton = styled.button`
   grid-column: ${(props) => (props.index === 0 ? 3 : 'auto')};
   border: 0.5px solid #e6e6e6;
   background-color: transparent;
   position: relative;
 `;
 
-const NovemberDayButton = window.styled.button`
+const NovemberDayButton = styled.button`
   grid-column: ${(props) => (props.index === 0 ? 6 : 'auto')};
   border: 0.5px solid #e6e6e6;
   background-color: transparent;
   position: relative;
 `;
 
-const MonthTime = window.styled.time`
+const MonthTime = styled.time`
   color: black;
   font-family: Arial;
   font-size: 100%;
 `;
 
-const WrapLeft = window.styled.div`
+const WrapLeft = styled.div`
   visibility: ${(props) => (props.selectedMonth === 'September' ? 'hidden' : 'visible')};
   display: inline-flex;
   justify-content: flex-end;
 `;
 
-const WrapRight = window.styled.div`
+const WrapRight = styled.div`
   visibility: ${(props) => (props.selectedMonth === 'November' ? 'hidden' : 'visible')};
   display: inline-flex;
   justify-content: flex-end;
 `;
 
-const Month = window.styled.div`
+const Month = styled.div`
   background: #fff;
   padding-top: 2%;
   text-align: center;
@@ -66,7 +67,7 @@ const Month = window.styled.div`
   font-size: 80%;
 `;
 
-const GridContainer = window.styled.div`
+const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   z-index: 10;
@@ -75,7 +76,7 @@ const GridContainer = window.styled.div`
   color: white;
 `;
 
-const RightArrow = window.styled.span`
+const RightArrow = styled.span`
   border-style: solid;
   color: #999;
   border-width: 2px 2px 0 0;
@@ -87,7 +88,7 @@ const RightArrow = window.styled.span`
   float: right;
 `;
 
-const LeftArrow = window.styled.span`
+const LeftArrow = styled.span`
   border-style: solid;
   color: #999;
   border-width: 2px 2px 0 0;
@@ -101,7 +102,7 @@ const LeftArrow = window.styled.span`
   right: 0;
 `;
 
-const CalendarInput = window.styled.input`
+const CalendarInput = styled.input`
   width: 95%;
   margin-bottom: 3%;
   background-color: white;

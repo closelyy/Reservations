@@ -1,5 +1,6 @@
+import styled from '@emotion/styled';
 
-const Title = window.styled.h3`
+const Title = styled.h3`
   float: left;
   padding-left: 3%;
   margin-top: 1%;
