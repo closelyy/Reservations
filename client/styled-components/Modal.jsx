@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
 const cd = require('../CalendarData/CalendarData').default;
 
@@ -14,6 +14,7 @@ const ModalContainer = styled.div`
   opacity: ${(props) => (props.showModal ? 1 : 0)};
   visibility: ${(props) => (props.showModal ? 'visible' : 'hidden')};
   transform: scale(1.0);
+  z-index: 9999;
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 `;
 

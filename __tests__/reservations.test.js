@@ -39,8 +39,8 @@ describe('<Reservation />', () => {
     test('it should show calendar on click', () => {
       const input = wrapper.find('.calendar-input');
       input.simulate('click');
-      const test = wrapper.find(Calendar);
-      expect(test).toHaveLength(1);
+      const xtest = wrapper.find(Calendar);
+      expect(xtest).toHaveLength(1);
     });
 
     xtest('it should open a calendar upon click', () => {
@@ -81,8 +81,8 @@ describe('<Calendar />', () => {
 });
 
 describe('Calendar Data Functions', () => {
-  describe('translateMonth', () => {
-    test('it should return a string', () => {
+  xdescribe('translateMonth', () => {
+    xest('it should return a string', () => {
       const input = '2019-10-01';
       const translate = cd.default.translateMonth;
       expect(translate(input)).toBe('October');
