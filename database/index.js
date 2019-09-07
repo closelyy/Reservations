@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const db = mongoose.connection;
-mongoose.connect('mongodb://localhost/reservations', { useNewUrlParser: true });
+mongoose.connect('mongodb://database/reservations', { useNewUrlParser: true });
 
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
