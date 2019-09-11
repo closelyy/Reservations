@@ -1,0 +1,20 @@
+version: '3'
+
+services: 
+  reservations:
+    build: /Users/boss/HRSF122/Reservations/
+    depends_on:
+      - 'database'
+      - 'seed'
+    ports:
+      - '3002:3002'
+
+  seed:
+    build:
+      context: .
+      dockerfile: ./database/Dockerfile
+    depends_on:
+      - 'database'
+
+  database:
+    image: mongo:latest

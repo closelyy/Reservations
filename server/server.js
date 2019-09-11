@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
