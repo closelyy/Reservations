@@ -1,6 +1,6 @@
-# Project Name
+# Reservations Component - Closely
 
-> Project description
+> Front-end that allows users to view available time slots when booking a reservation.
 
 ## Related Projects
 
