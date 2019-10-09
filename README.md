@@ -4,10 +4,8 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/closelyy/Reviews
+  - https://github.com/closelyy/Photos
 
 ## Table of Contents
 
@@ -17,14 +15,11 @@
 
 ## Usage
 
-> Some usage instructions
+> Module with drop downs that allow you to select party size, time of reservation, and also date of reservation. Drop down calendar allows you to pick a date for the reservations, and clicking submit brings up a modal that shows all available times on the selected date.
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+-node >= 6.13.0
 
 ## Development
 
@@ -32,8 +27,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-```sh
-npm install -g webpack
+```
 npm install
+npm run build
+npm run seed-db
+npm start
 ```
 
