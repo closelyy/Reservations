@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 const cd = require('../CalendarData/CalendarData');
 
 const CalendarContainer = styled.div`
-  position: fixed;
+  position: absolute;
   min-width: 25%;
   min-height: 20%;
   border: 2px solid #e6e6e6;
