@@ -52,7 +52,7 @@
     "jest-enzyme": "^7.1.0",
     "jsdom": "15.1.1",
     "jsdom-global": "3.0.2",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mongoose": "^5.9.2",
     "nodemon": "^1.19.1",
     "react-test-renderer": "^16.9.0",
